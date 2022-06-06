@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+
+  <div class="sign_in_page_wrap">
+    <div class="login_content">
+      <div class="ion-text-center">
+        <img src="assets/Farmer5.png" />
+      </div>
+
+      <ion-input
+        [(ngModel)]="Username"
+        placeholder="Kyriba Code"></ion-input>
+
+      <ion-input
+        [(ngModel)]="Password"
+        type="password"
+        placeholder="Password"></ion-input>
+
+        <ion-input
+        [(ngModel)]="Database"></ion-input>
+
+
+      <ion-button
+        [disabled]="!Username || !Password"
+        expand="full"
+        color="secondary"
+        (click)="LoginClicked()">Log In</ion-button>
+      <p>Forgot your login details?<a href="#"> Get help signing in</a></p>
+
+      
+
+      <h5>
+        OR
+      </h5>
+
+      <p>
+        Don't have an account?
+        <a [routerLink]="['/register']"> Sign up.</a>
+      </p>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+   
+  </ion-toolbar>
+</ion-footer>
+
+
+

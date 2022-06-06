@@ -1,0 +1,6 @@
+{
+	"appId": "code4good.mobile.app",
+	"appName": "Code4GoodApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

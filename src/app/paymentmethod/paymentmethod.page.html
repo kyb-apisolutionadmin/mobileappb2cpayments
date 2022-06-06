@@ -1,0 +1,75 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Pay INR 750 </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="existingcard">
+        <ion-label>Saved card</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="newcard">
+        <ion-label>New Card</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <ng-container [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'existingcard'">
+      
+      <ion-item>
+        <ion-label>Select</ion-label>
+        <ion-select>
+          <ion-select-option  value=1>Visa *****4242 </ion-select-option>
+          <ion-select-option value=2>Mastercard ****3242</ion-select-option>
+          <ion-select-option value=3>Amex *****5456</ion-select-option>
+          <ion-select-option value=4>Apple Pay</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+    </ion-list>
+    
+    
+    <ion-list lines="full" class="ion-no-margin ion-no-padding" *ngSwitchCase="'newcard'">
+     
+  
+    <ion-list-header>Payment Method</ion-list-header>
+    <ion-item>
+      <ion-label position="stacked">Name on card<ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="card.name"
+      placeholder="Name on card" required type="text" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Card Number<ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="card.number"
+        required type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Expiration Month <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="card.expMonth"
+      placeholder="MM" required type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Expiration Year <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="card.expYear"
+      placeholder="YYYY" required type="text"></ion-input>
+    </ion-item>
+    
+
+    <img src="assets/PaymentMethodLogo.jpeg" />
+  </ion-list>
+  <ion-button expand="block">Submit</ion-button>
+
+  
+
+</ng-container>
+
+</ion-content>
